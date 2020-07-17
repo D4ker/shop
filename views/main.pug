@@ -1,0 +1,28 @@
+include header
+
+div(class='wrap')
+	div(class='content')
+		header(class='site-header')
+			include site_header
+
+		div(class='container')
+			div(class='row')
+				div(class='col col-md-12')
+					h2 Категории
+				each val, index in category
+					div(class='col col-md-4')
+						div(class='card')
+							a(href='category?id=' + val['id'])
+								h3(class='card-title text-center') #{val['name']}
+								img(
+									src='img/' + val['image']
+									class='card-images'
+								)
+							ul(class='card-actions')
+								li
+									a(href='/category?id=' + val['id'])
+										button(
+											data-category_id = val['id']
+										) Перейти
+		include nav
+	include footer

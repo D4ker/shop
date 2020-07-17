@@ -1,0 +1,57 @@
+include header.pug
+
+div(class='wrap')
+	div(class='content')
+		header(class='site-header')
+			include site_header_order
+
+		div(class='container')
+			div(class='row')
+				div(class='col col-md-12')
+					h3(class="cart-header") Корзина
+					div(id='cart-nav')
+				div(class='col col-md-12')
+					h3 Оформление заказа 
+				div(class='col col-md-6')
+					form#shop-order(action="")
+						div(class='form-control')
+							label(for='username') Ваше имя
+							input(
+								type='text',
+								id='username',
+								placeholder='Введите Ваше имя',
+							)
+						div(class='form-control')
+							label(for='phone') Телефон
+							input(
+								type='text',
+								id='phone',
+								placeholder='88005553535',
+							)
+						div(class='form-control')
+							label(for='email') Email
+							input(
+								type='text',
+								id='email',
+								placeholder='mail@example.com',
+							)
+						div(class='form-control')
+							label(for='address') Адрес
+							textarea(
+								id='address',
+								placeholder='Откуда Вы?',
+							)
+						div(class='form-control')
+							label(for='rule')
+								input(
+									type='checkbox',
+									id='rule',
+									value='1'
+								)
+								span Terms and Conditions
+							div(class='form-control text-right')
+								button(class='button-primary', type='submit') Оформить заказ
+		//include nav
+
+	include footer
+	script(src='js/order.js')
